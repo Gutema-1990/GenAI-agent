@@ -50,7 +50,7 @@ if not os.path.exists(temp_dir):
 
 # Add dummy resume if it does not exist
 if not os.path.exists(dummy_resume_path):
-    default_resume_path = "path/to/your/dummy_resume.pdf"
+    default_resume_path = "resume.pdf"
     shutil.copy(default_resume_path, dummy_resume_path)
 
 # Sidebar - File Upload
