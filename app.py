@@ -23,16 +23,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 SERPER_API_KEY = os.getenv("SERPER_API_KEY")
 FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY")
 LINKEDIN_JOB_SEARCH = os.getenv("LINKEDIN_JOB_SEARCH")
-# Set environment variables from Streamlit secrets or .env
-# os.environ["LINKEDIN_EMAIL"] = st.secrets.get("LINKEDIN_EMAIL", "")
-# os.environ["LINKEDIN_PASS"] = st.secrets.get("LINKEDIN_PASS", "")
-# os.environ["LANGCHAIN_API_KEY"] = st.secrets.get("LANGCHAIN_API_KEY", "")
-# os.environ["LANGCHAIN_TRACING_V2"] = os.getenv("LANGCHAIN_TRACING_V2") or st.secrets.get("LANGCHAIN_TRACING_V2", "")
-# os.environ["LANGCHAIN_PROJECT"] = st.secrets.get("LANGCHAIN_PROJECT", "")
-# os.environ["GROQ_API_KEY"] = st.secrets.get("GROQ_API_KEY", "")
-# os.environ["SERPER_API_KEY"] = st.secrets.get("SERPER_API_KEY", "")
-# os.environ["FIRECRAWL_API_KEY"] = st.secrets.get("FIRECRAWL_API_KEY", "")
-# os.environ["LINKEDIN_SEARCH"] = st.secrets.get("LINKEDIN_JOB_SEARCH", "")
+
 
 # Page configuration
 st.set_page_config(layout="wide")
