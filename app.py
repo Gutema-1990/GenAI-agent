@@ -202,34 +202,34 @@ streamlit_analytics.start_tracking()
 
 # Display chat interface
 with input_section:
-    options = [
-        "Identify top trends in the tech industry relevant to gen ai",
-        "Find emerging technologies and their potential impact on job opportunities",
-        "Summarize my resume",
-        "Create a career path visualization based on my skills and interests from my resume",
-        "GenAI Jobs at Microsoft",
-        "Job Search GenAI jobs in India.",
-        "Analyze my resume and suggest a suitable job role and search for relevant job listings",
-        "Generate a cover letter for my resume.",
-    ]
-    icons = ["🔍", "🌐", "📝", "📈", "💼", "🌟", "✉️", "🧠  "]
+    # options = [
+    #     "Identify top trends in the tech industry relevant to gen ai",
+    #     "Find emerging technologies and their potential impact on job opportunities",
+    #     "Summarize my resume",
+    #     "Create a career path visualization based on my skills and interests from my resume",
+    #     "GenAI Jobs at Microsoft",
+    #     "Job Search GenAI jobs in India.",
+    #     "Analyze my resume and suggest a suitable job role and search for relevant job listings",
+    #     "Generate a cover letter for my resume.",
+    # ]
+    # icons = ["🔍", "🌐", "📝", "📈", "💼", "🌟", "✉️", "🧠  "]
 
-    selected_query = pills(
-        "Pick a question for query:",
-        options,
-        clearable=None,  # type: ignore
-        icons=icons,
-        index=st.session_state["active_option_index"],
-        key="pills",
-    )
-    if selected_query:
-        st.session_state["active_option_index"] = options.index(selected_query)
+    # selected_query = pills(
+    #     "Pick a question for query:",
+    #     options,
+    #     clearable=None,  # type: ignore
+    #     icons=icons,
+    #     index=st.session_state["active_option_index"],
+    #     key="pills",
+    # )
+    # if selected_query:
+    #     st.session_state["active_option_index"] = options.index(selected_query)
 
     # Display text input form
     with st.form(key="query_form", clear_on_submit=True):
         user_input_query = st.text_input(
             "Query:",
-            value=(selected_query if selected_query else "Detail analysis of latest layoff news India?"),
+            # value=(selected_query if selected_query else "Detail analysis of latest layoff news India?"),
             placeholder="📝 Write your query or select from the above",
             key="input",
         )
