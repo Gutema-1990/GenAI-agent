@@ -107,24 +107,24 @@ else:
     }
 
 # Sidebar - Service Provider Note
-st.sidebar.markdown(
-    """
-    **Note:** \n
-    This multi-agent system works best with OpenAI. llama 3.1 may not always produce optimal results.\n
-    Any key provided will not be stored or shared it will be used only for the current session.
-    """
-)
-st.sidebar.markdown(
-    """
-    <div style="padding:10px 0;">
-        If you like the project, give a 
-        <a href="https://github.com/amanv1906/GENAI-CareerAssistant-Multiagent" target="_blank" style="text-decoration:none;">
-            ⭐ on GitHub
-        </a>
-    </div>
-    """,
-    unsafe_allow_html=True,
-)
+# st.sidebar.markdown(
+#     """
+#     **Note:** \n
+#     This multi-agent system works best with OpenAI. llama 3.1 may not always produce optimal results.\n
+#     Any key provided will not be stored or shared it will be used only for the current session.
+#     """
+# )
+# st.sidebar.markdown(
+#     """
+#     <div style="padding:10px 0;">
+#         If you like the project, give a 
+#         <a href="https://github.com/amanv1906/GENAI-CareerAssistant-Multiagent" target="_blank" style="text-decoration:none;">
+#             ⭐ on GitHub
+#         </a>
+#     </div>
+#     """,
+#     unsafe_allow_html=True,
+# )
 
 # Create the agent flow
 flow_graph = define_graph()
