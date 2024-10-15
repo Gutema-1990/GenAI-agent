@@ -28,7 +28,6 @@ LINKEDIN_JOB_SEARCH = os.getenv("LINKEDIN_JOB_SEARCH")
 # Page configuration
 st.set_page_config(layout="wide")
 st.title("GenAI Career Assistant - 👨‍💼")
-st.markdown("[Connect with me on LinkedIn](https://www.linkedin.com/in/aman-varyani-885725181/)")
 
 streamlit_analytics.start_tracking()
 
@@ -105,27 +104,6 @@ else:
         "model_provider": "groq",
         "temperature": 0.3,
     }
-
-# Sidebar - Service Provider Note
-# st.sidebar.markdown(
-#     """
-#     **Note:** \n
-#     This multi-agent system works best with OpenAI. llama 3.1 may not always produce optimal results.\n
-#     Any key provided will not be stored or shared it will be used only for the current session.
-#     """
-# )
-# st.sidebar.markdown(
-#     """
-#     <div style="padding:10px 0;">
-#         If you like the project, give a 
-#         <a href="https://github.com/amanv1906/GENAI-CareerAssistant-Multiagent" target="_blank" style="text-decoration:none;">
-#             ⭐ on GitHub
-#         </a>
-#     </div>
-#     """,
-#     unsafe_allow_html=True,
-# )
-
 # Create the agent flow
 flow_graph = define_graph()
 message_history = StreamlitChatMessageHistory()
@@ -202,29 +180,6 @@ streamlit_analytics.start_tracking()
 
 # Display chat interface
 with input_section:
-    # options = [
-    #     "Identify top trends in the tech industry relevant to gen ai",
-    #     "Find emerging technologies and their potential impact on job opportunities",
-    #     "Summarize my resume",
-    #     "Create a career path visualization based on my skills and interests from my resume",
-    #     "GenAI Jobs at Microsoft",
-    #     "Job Search GenAI jobs in India.",
-    #     "Analyze my resume and suggest a suitable job role and search for relevant job listings",
-    #     "Generate a cover letter for my resume.",
-    # ]
-    # icons = ["🔍", "🌐", "📝", "📈", "💼", "🌟", "✉️", "🧠  "]
-
-    # selected_query = pills(
-    #     "Pick a question for query:",
-    #     options,
-    #     clearable=None,  # type: ignore
-    #     icons=icons,
-    #     index=st.session_state["active_option_index"],
-    #     key="pills",
-    # )
-    # if selected_query:
-    #     st.session_state["active_option_index"] = options.index(selected_query)
-
     # Display text input form
     with st.form(key="query_form", clear_on_submit=True):
         user_input_query = st.text_input(
