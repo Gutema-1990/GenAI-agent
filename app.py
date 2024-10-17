@@ -27,7 +27,7 @@ LINKEDIN_JOB_SEARCH = os.getenv("LINKEDIN_JOB_SEARCH")
 
 # Page configuration
 st.set_page_config(layout="wide")
-st.title("GenAI Career Assistant - 👨‍💼")
+st.title("GenAI Career Assistant")
 
 streamlit_analytics.start_tracking()
 
@@ -184,8 +184,7 @@ with input_section:
     with st.form(key="query_form", clear_on_submit=True):
         user_input_query = st.text_input(
             "Query:",
-            # value=(selected_query if selected_query else "Detail analysis of latest layoff news India?"),
-            placeholder="📝 Write your query or select from the above",
+            placeholder="Write your query",
             key="input",
         )
         submit_query_button = st.form_submit_button(label="Send")
