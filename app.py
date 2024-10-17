@@ -67,43 +67,43 @@ service_provider = st.sidebar.selectbox(
 streamlit_analytics.stop_tracking()
 
 # Not to track the key
-if service_provider == "openai":
-    # Sidebar - OpenAI Configuration
-    api_key_openai = st.sidebar.text_input(
-        "OpenAI API Key",
-        st.session_state.get("OPENAI_API_KEY", ""),
-        type="password",
-    )
-    model_openai = st.sidebar.selectbox(
-        "OpenAI Model",
-        ("gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"),
-    )
-    settings = {
-        "model": model_openai,
-        "model_provider": "openai",
-        "temperature": 0.3,
-    }
-    st.session_state["OPENAI_API_KEY"] = api_key_openai
-    os.environ["OPENAI_API_KEY"] = st.session_state["OPENAI_API_KEY"]
+# if service_provider == "openai":
+#     # Sidebar - OpenAI Configuration
+#     api_key_openai = st.sidebar.text_input(
+#         "OpenAI API Key",
+#         st.session_state.get("OPENAI_API_KEY", ""),
+#         type="password",
+#     )
+#     model_openai = st.sidebar.selectbox(
+#         "OpenAI Model",
+#         ("gpt-4o-mini", "gpt-4o", "gpt-3.5-turbo"),
+#     )
+#     settings = {
+#         "model": model_openai,
+#         "model_provider": "openai",
+#         "temperature": 0.3,
+#     }
+#     st.session_state["OPENAI_API_KEY"] = api_key_openai
+#     os.environ["OPENAI_API_KEY"] = st.session_state["OPENAI_API_KEY"]
 
-else:
-    # Toggle visibility for Groq API Key input
-    if "groq_key_visible" not in st.session_state:
-        st.session_state["groq_key_visible"] = False
+# else:
+#     # # Toggle visibility for Groq API Key input
+#     # if "groq_key_visible" not in st.session_state:
+#     #     st.session_state["groq_key_visible"] = False
 
-    if st.sidebar.button("Enter Groq API Key (optional)"):
-        st.session_state["groq_key_visible"] = True
+#     # if st.sidebar.button("Enter Groq API Key (optional)"):
+#     #     st.session_state["groq_key_visible"] = True
 
-    if st.session_state["groq_key_visible"]:
-        api_key_groq = st.sidebar.text_input("Groq API Key", type="password")
-        st.session_state["GROQ_API_KEY"] = api_key_groq
-        os.environ["GROQ_API_KEY"] = api_key_groq
+#     if st.session_state["groq_key_visible"]:
+#         api_key_groq = st.sidebar.text_input("Groq API Key", type="password")
+#         st.session_state["GROQ_API_KEY"] = api_key_groq
+#         os.environ["GROQ_API_KEY"] = api_key_groq
 
-    settings = {
-        "model": "llama-3.1-70b-versatile",
-        "model_provider": "groq",
-        "temperature": 0.3,
-    }
+settings = {
+    "model": "llama-3.1-70b-versatile",
+    "model_provider": "groq",
+    "temperature": 0.3,
+}
 # Create the agent flow
 flow_graph = define_graph()
 message_history = StreamlitChatMessageHistory()
@@ -193,8 +193,8 @@ with input_section:
         if not uploaded_document:
             st.error("Please upload your resume before submitting a query.")
 
-        elif service_provider == "openai" and not st.session_state["OPENAI_API_KEY"]:
-            st.error("Please enter your OpenAI API key before submitting a query.")
+        # elif service_provider == "openai" and not st.session_state["OPENAI_API_KEY"]:
+        #     st.error("Please enter your OpenAI API key before submitting a query.")
 
         elif user_input_query:
             # Process the query as usual if resume is uploaded
