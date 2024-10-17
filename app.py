@@ -60,10 +60,10 @@ with open(filepath, "wb") as f:
 st.markdown("**Resume uploaded successfully!**")
 
 # Sidebar - Service Provider Selection
-service_provider = st.sidebar.selectbox(
-    "Service Provider",
-    ("groq (llama-3.1-70b-versatile)", "openai"),
-)
+# service_provider = st.sidebar.selectbox(
+#     "Service Provider",
+#     ("groq (llama-3.1-70b-versatile)", "openai"),
+# )
 streamlit_analytics.stop_tracking()
 
 # Not to track the key
