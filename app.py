@@ -182,8 +182,7 @@ streamlit_analytics.start_tracking()
 with input_section:
     # Display text input form
     with st.form(key="query_form", clear_on_submit=True):
-        user_input_query = st.text_input(
-            "Query:",
+        user_input_query = st.chat_input(
             placeholder="Write your query",
             key="input",
         )
